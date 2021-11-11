@@ -68,6 +68,9 @@ class TransIP {
       headers: { ...defaultHeaders, ...headers },
       body: parsedBody,
     });
+    if(response.status === 204) {
+      return ""
+    }
     return await response.json();
   }
 
