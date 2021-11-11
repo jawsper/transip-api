@@ -87,8 +87,8 @@ class TransIP {
     let result = "?";
     let i = 0;
     for (const key in params) {
-      if (Object.hasOwnProperty.call(params, key)) {
-        result += `${i > 0 ? "&" : ""}${key}=${obkect[key]}`;
+      if (Object.hasOwnProperty.call(params, key) && params[key] !== null) {
+        result += `${i > 0 ? "&" : ""}${key}=${params[key]}`;
         i++;
       }
     }
